@@ -6,6 +6,9 @@ const T0 = Type.Array(Type.String())
 const F0 = (arg: Static<typeof T0>) => {}
 F0(['', ''])
 
+const arr: readonly string[] = [ '' ]
+F0(arr)
+
 // --------------------------------------------
 
 const T1 = Type.Array(Type.Union([Type.String(), Type.Number()]))

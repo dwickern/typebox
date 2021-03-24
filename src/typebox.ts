@@ -206,7 +206,7 @@ export type StaticUnion       <T extends readonly TSchema[]>   = { [K in keyof T
 export type StaticTuple       <T extends readonly TSchema[]>   = { [K in keyof T]: Static<T[K]> }
 export type StaticObject      <T extends TProperties>          = StaticProperties<T>
 export type StaticDict        <T extends TSchema>              = { [key: string]: Static<T> }
-export type StaticArray       <T extends TSchema>              = Array<Static<T>>
+export type StaticArray       <T extends TSchema>              = ReadonlyArray<Static<T>>
 export type StaticLiteral     <T extends TValue>               = T
 export type StaticEnum        <T extends TKey>                 = T
 export type StaticConstructor <T extends readonly TSchema[], U extends TSchema> = new (...args: [...{ [K in keyof T]: Static<T[K]> }]) => Static<U>
